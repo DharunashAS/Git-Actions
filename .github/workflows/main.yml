@@ -45,4 +45,4 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo Moved to Prod.. \
-          Thank you
+          Thank you...
