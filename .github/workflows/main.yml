@@ -27,6 +27,7 @@ jobs:
         run: echo Hello, world!
 
   second_job:
+    needs: [First_job]
     runs-on: ubuntu-latest
     steps:
       # Runs a set of commands using the runners shell
