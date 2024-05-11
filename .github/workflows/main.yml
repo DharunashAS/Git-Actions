@@ -17,6 +17,8 @@ on:
 jobs:
   calling:
     uses: DharunashAS/Git-Actions/.github/workflows/function.yml@main
+    with:
+      config-path: .github/workflows/main.yml
   # This workflow contains a single job called "build"
   Dev:
     # The type of runner that the job will run on
