@@ -26,7 +26,7 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
       - name: calling workflow
-        uses: Git-Actions/.github/workflows/function.yml@main
+        uses: DharunashAS/Git-Actions/.github/workflows/function.yml@main
 
       - name: Summary
         run: echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
