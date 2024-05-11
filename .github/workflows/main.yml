@@ -26,6 +26,9 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
 
+      - name: Summary
+        run: echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
+
   Test:
     needs: [Dev]
     runs-on: ubuntu-latest
@@ -47,14 +50,4 @@ jobs:
           echo Moved to Prod.. \
           Thank you...
 
-  matrix-job:
-      runs-on: ubuntu-latest
-      strategy:
-        matrix:
-          pet: [cat, dog]
-          color: [pink, brown]
-          include:
-            - color: white
-              pet: dog
-      steps:
-        - run: echo "Hello ${{ matrix.color }} ${{ matrix.pet }}"
+  
