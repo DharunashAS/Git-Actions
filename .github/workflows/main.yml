@@ -5,8 +5,8 @@ name: CI
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
+  # push:
+  #   branches: [ "main" ]
   # pull_request:
   #   branches: [ "main" ]
 
@@ -19,15 +19,14 @@ jobs:
   Dev:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    environment: 
-      name: dev
-      url: 'www.amazon.in'
       
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
+      - name: calling workflow
+        uses: Git-Actions/.github/workflows/function.yml@main
 
       - name: Summary
         run: echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
