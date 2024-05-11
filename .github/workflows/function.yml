@@ -14,6 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - name: print hello
-          run: echo "input= ${{inputs.config-path}}"
-        
+          run: |
+            read -p "Enter your name: " name
+            echo "Hello, $name!"
+            
     
