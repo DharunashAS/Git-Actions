@@ -1,0 +1,21 @@
+name: function
+
+on:
+  workflow_call:
+        inputs:
+          config-path:
+            required: true
+            type: string
+
+jobs:
+  # This workflow contains a single job called "build"
+  called-job:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    steps:
+        - name: print hello
+          run: |
+            read -p "Enter your name: " name
+            echo "Hello, $name!"
+            
+    

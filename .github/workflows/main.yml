@@ -5,8 +5,8 @@ name: CI
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
+  # push:
+  #   branches: [ "main" ]
   # pull_request:
   #   branches: [ "main" ]
 
@@ -15,16 +15,21 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  calling:
+    uses: DharunashAS/Git-Actions/.github/workflows/function.yml@main
+    with:
+      config-path: .github/workflows/main.yml
   # This workflow contains a single job called "build"
   Dev:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
+      - name: Summary
+        run: echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
 
   Test:
     needs: [Dev]
@@ -46,3 +51,5 @@ jobs:
         run: |
           echo Moved to Prod.. \
           Thank you...
+
+  
